@@ -8,9 +8,11 @@ import { SharedModule } from './shared/shared.module';
 import { QuestionsModule } from './questions/questions.module';
 import { NgxEditorModule } from 'ngx-editor';
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     NgxEditorModule,

@@ -4,6 +4,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { RichTxtEditorComponent } from './shared/rich-txt-editor/rich-txt-editor.component';
 import { AskQuestionComponent } from './questions/ask-question/ask-question.component';
+import { HomeComponent } from './questions/home/home.component';
+import { ViewQuestionComponent } from './questions/view-question/view-question.component';
 
 const routes: Routes = [
   {
@@ -17,13 +19,21 @@ const routes: Routes = [
   {
     path:'question',
     component:AskQuestionComponent
-  }
+  },
+    { path: 'questions/view-question/:id', component: ViewQuestionComponent },
+{
+  path:'home',
+  component:HomeComponent
+},
+{
+  path:" ",
+  redirectTo:'home',
+  pathMatch:"full"
+}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
-  
-}
+export class AppRoutingModule { }

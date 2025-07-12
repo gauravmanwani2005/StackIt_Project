@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="auth-container">
     <form class="auth-form">
       <h2>Login to StackIt</h2>
@@ -11,9 +12,9 @@
       <button type="submit">Login</button>
   
       <p class="switch-link">
-        Don't have an account? <a routerLink="/register">Register</a>
+        Don't have an account? <a [routerLink]="['/register-s']">Register</a>
       </p>
     </form>
   </div>
-  
+  <app-footer></app-footer>
   

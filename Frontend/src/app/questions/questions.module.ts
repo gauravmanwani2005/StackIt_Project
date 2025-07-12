@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { SharedModule } from '../shared/shared.module';
 import { NgxEditorModule } from 'ngx-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -24,7 +25,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     NgxEditorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+        RouterModule
+
   ]
 })
 export class QuestionsModule { }

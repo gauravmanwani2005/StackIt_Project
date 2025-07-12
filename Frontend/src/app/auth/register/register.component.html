@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="auth-container">
     <form class="auth-form">
       <h2>Create Your StackIt Account</h2>
@@ -14,8 +15,9 @@
       <button type="submit">Register</button>
   
       <p class="switch-link">
-        Already have an account? <a routerLink="/login">Login</a>
+        Already have an account? 
+        <a [routerLink]="['login-s']">Login</a>
       </p>
     </form>
   </div>
-  
+

@@ -1,1 +1,71 @@
-<p>home works!</p>
+<app-navbar (search)="performSearch($event)"></app-navbar>
+<div class="home-wrapper">
+  <section class="welcome">
+    <h1>Welcome to <span>StackIt</span></h1>
+    <p>A community-driven platform for developers to ask questions, share knowledge, and learn together.</p>
+  
+  <button class="primary-btn" [routerLink]="['/question']">Ask Your First Question</button>
+
+  </section>
+
+  <section class="stats">
+    <div class="stat-box">
+      <h2>1,234</h2>
+      <p>Questions Asked</p>
+    </div>
+    <div class="stat-box">
+      <h2>5,678</h2>
+      <p>Answers Given</p>
+    </div>
+    <div class="stat-box">
+      <h2>890</h2>
+      <p>Active Users</p>
+    </div>
+  </section>
+
+  <section class="filters">
+    <h3>Recent Questions</h3>
+    <div class="filter-buttons">
+      <button (click)="performSearch('newest')">Newest</button>
+      <button (click)="performSearch('most votes')">Most Votes</button>
+      <button (click)="performSearch('most answers')">Most Answers</button>
+      <button (click)="performSearch('most active')">Most Active</button>
+    </div>
+  </section>
+
+  <section class="question-feed">
+    <div class="question-card" *ngFor="let q of filteredQuestions">
+      <div class="q-stats">
+        <div class="votes">{{ q.votes }} votes</div>
+        <div class="answers">{{ q.answers.length }} answers</div>
+      </div>
+      <div class="q-content">
+        <a [routerLink]="['/questions/view-question', q.id]">{{ q.title }}</a>
+        <p>{{ q.description }}</p>
+        <div class="q-tags">
+          <span *ngFor="let tag of q.tags" (click)="performSearch(tag)">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sidebar">
+    <div class="tag-box">
+      <h4>Popular Tags</h4>
+      <div class="tag-list">
+        <span class="tag" *ngFor="let tag of allTags" (click)="performSearch(tag)">{{ tag }}</span>
+      </div>
+    </div>
+
+    <div class="activity-box">
+      <h4>Recent Activity</h4>
+      <ul>
+        <li>New answer on "React Hooks"</li>
+        <li>Question accepted "TypeScript Types"</li>
+        <li>New user joined the community</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+

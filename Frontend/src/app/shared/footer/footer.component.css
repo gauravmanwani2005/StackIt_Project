@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #f1f3f6;
+  border-top: 1px solid #ddd;
+  font-size: 0.95rem;
+  color: #4a5568;
+  flex-wrap: wrap;
+  margin-top: 0; /* Remove extra white space */
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-right a {
+  color: #2d7ff9;
+  margin-left: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-right a:hover {
+  color: #1a5bb8;
+}

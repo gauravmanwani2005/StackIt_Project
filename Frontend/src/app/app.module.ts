@@ -7,6 +7,8 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { QuestionsModule } from './questions/questions.module';
 import { NgxEditorModule } from 'ngx-editor';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { NgxEditorModule } from 'ngx-editor';
     AppRoutingModule,
     AuthModule,
     SharedModule,
+    RouterModule,
+    FormsModule,
     QuestionsModule
   ],
   providers: [],

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 import { QuestionService } from '../question.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Editor, Validators } from 'ngx-editor';
 @Component({
   selector: 'app-ask-question',
@@ -13,9 +13,9 @@ import { Editor, Validators } from 'ngx-editor';
 export class AskQuestionComponent {
   
 
-  //  submitQuestion(){
-  //   this.questService.submitQuestion(body);
-  //  }
+   submitQuestion(body: any){
+    this.questService.submitQuestion(body).subscribe();
+   }
 
   form!: FormGroup;
   isSubmitting = false;
@@ -25,7 +25,7 @@ export class AskQuestionComponent {
     private fb: FormBuilder,
     // private questionService: QuestionService,
     private router: Router,
-    questService:QuestionService
+    private questService:QuestionService
   ) {}
 
   ngOnInit(): void {
@@ -43,7 +43,7 @@ export class AskQuestionComponent {
 
   onSubmitA(): void {
     if (this.form.invalid) {
-      this.form.markAllAsTouched();
+      this.submitQuestion(this.form);
       return;
     }
 
@@ -92,8 +92,7 @@ onTagInput(event: any): void {
 onSubmit(): void {
   console.log(this.form.value)
   if (this.form.invalid) {
-    this.form.markAllAsTouched();
-    return;
+    
   }
 
   const formValues = this.form.value;
@@ -119,6 +118,8 @@ onSubmit(): void {
   this.submittedTags = payload.tags;
 
   console.log('Submitted:', payload);
+
+  this.submitQuestion(payload);
 
   // Optionally reset form
   this.form.reset();

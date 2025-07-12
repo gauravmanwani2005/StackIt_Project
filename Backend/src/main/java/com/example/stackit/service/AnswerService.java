@@ -57,10 +57,4 @@ public class AnswerService {
         }
         answerRepository.deleteById(id);
     }
-
-    public List<AnswerResponse> getAnswersByQuestion(Integer questionId) {
-        Question question = questionRepository.findById(questionId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-        return answerRepository.findByQuestion(question).stream().map(Mapper::getAnswer).collect(Collectors.toList());
-    }
 }

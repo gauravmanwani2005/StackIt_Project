@@ -9,10 +9,6 @@ export class AppComponent {
   constructor(public router: Router) {}
 
   showNavbar(): boolean {
-    return this.router.url === '/home' || this.router.url === '/';
+    return this.router.url === '' || this.router.url === '/';
   }
 }
-
-
-
-

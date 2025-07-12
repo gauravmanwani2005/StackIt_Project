@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <a routerLink="/" class="logo">
+    <a routerLink=" " class="logo">
       <span class="logo-icon">S</span>
       <span class="logo-text">StackIt</span>
     </a>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="navbar-right">
-    <a routerLink="/questions/ask-question" class="ask-btn">+ Ask Question</a>
+    <button  class="ask-btn" [routerLink]="['/question']">Ask Question</button>
     <div class="notification" (click)="onNotificationClick()">
       <span class="bell">&#128276;</span>
       <span class="badge">3</span>

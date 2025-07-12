@@ -1,31 +1,23 @@
 package com.example.stackit.model;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "Question")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Question {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "question_id")
-    private int questionId;
-
+public class QuestionRequest {
     private String title;
-
     private String description;
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 
     @Column(name = "created_at", columnDefinition = "DATETIME")
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Column(name = "accepted_answer_id")
-    private Integer acceptedAnswerId;
+
 
     public String getTitle() {
         return title;
@@ -42,5 +34,6 @@ public class Question {
     public void setDescription(String description) {
         this.description = description;
     }
+
 
 }

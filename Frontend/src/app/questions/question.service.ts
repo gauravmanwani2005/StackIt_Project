@@ -9,7 +9,7 @@ export class QuestionService {
   constructor( private httpClient:HttpClient) {}
    
   submitQuestion(body:any):Observable<any>{
-    return this.httpClient.post("",{body});
+    return this.httpClient.post("http://localhost:8080/question",body);
   }
 
 }

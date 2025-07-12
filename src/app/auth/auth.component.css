@@ -5,7 +5,6 @@
     min-height: 100vh;
     background: #f0f2f5;
     padding: 2rem;
-   
   }
   
   .auth-form {
@@ -14,17 +13,8 @@
     border-radius: 8px;
     width: 100%;
     max-width: 400px;
-    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
-    box-shadow: -28px -22px 22px 1px rgba(209,156,16,0.75);
-    -webkit-box-shadow: -28px -22px 22px 1px rgba(209,156,16,0.75);
-    -moz-box-shadow: -28px -22px 22px 1px rgba(209,156,16,0.75);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-
-    /* Apply to entire form UI */
-  body, .auth-form {
-    font-family: 'Inter', sans-serif;
-    color: #333;
-    }
   
   .auth-form h2 {
     text-align: center;
@@ -72,5 +62,4 @@
     color: #007bff;
     text-decoration: none;
   }
-
   

@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="submitContent()">
+    <label>Write your question/answer</label>
+    <ngx-editor [editor]="editor" formControlName="content"></ngx-editor>
+  
+    <button type="submit">Submit</button>
+  </form>
+  
+  

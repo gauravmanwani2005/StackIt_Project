@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { QuestionsModule } from './questions/questions.module';
+import { AskQuestionComponent } from './questions/ask-question/ask-question.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { QuestionsModule } from './questions/questions.module';
     AppRoutingModule,
     AuthModule,
     SharedModule,
-    QuestionsModule
+    QuestionsModule ,
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

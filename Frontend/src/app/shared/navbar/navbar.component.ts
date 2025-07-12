@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  searchTerm: string = '';
 
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+  @Output() notificationClicked: EventEmitter<void> = new EventEmitter<void>();
+
+  onSearchInputChange() {
+    this.search.emit(this.searchTerm);
+  }
+
+  onNotificationClick() {
+    this.notificationClicked.emit();
+  }
 }

@@ -1,1 +1,28 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="navbar-left">
+    <a routerLink="/" class="logo">
+      <span class="logo-icon">S</span>
+      <span class="logo-text">StackIt</span>
+    </a>
+  </div>
+
+  <div class="navbar-center">
+    <div class="search-box">
+      <span class="search-icon">&#128269;</span>
+      <input
+        type="text"
+        placeholder="Search questions..."
+        [(ngModel)]="searchTerm"
+        (input)="onSearchInputChange()" />
+    </div>
+  </div>
+
+  <div class="navbar-right">
+    <a routerLink="/questions/ask-question" class="ask-btn">+ Ask Question</a>
+    <div class="notification" (click)="onNotificationClick()">
+      <span class="bell">&#128276;</span>
+      <span class="badge">3</span>
+    </div>
+    <a routerLink="/login-s" class="login-btn">👤 Login</a>
+  </div>
+</nav>

@@ -1,0 +1,24 @@
+
+<div class="questions-home">
+  <div class="header">
+    <h2>All Questions</h2>
+    <a class="ask-btn" routerLink="/questions/ask-question">Ask Question</a>
+  </div>
+  <div class="questions-list">
+    <div *ngFor="let q of questions" class="question-card">
+      <div class="stats">
+        <div class="votes">{{ q.votes }} votes</div>
+        <div class="answers">{{ q.answers.length }} answers</div>
+      </div>
+      <div class="main">
+        <a [routerLink]="['/questions/view-question', q.id]" class="title">{{ q.title }}</a>
+        <div class="meta">   
+          <span class="author">Asked by {{ q.author }}</span>
+          <span class="tags">
+            <span *ngFor="let tag of q.tags" class="tag">{{ tag }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

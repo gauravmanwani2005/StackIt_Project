@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ask-question',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ask-question.component.css']
 })
 export class AskQuestionComponent {
-
+ 
 }

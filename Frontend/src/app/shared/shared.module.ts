@@ -3,22 +3,28 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { RichTxtEditorComponent } from './rich-txt-editor/rich-txt-editor.component';
+import { NgxEditorModule } from 'ngx-editor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedComponent } from './shared.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    RichTxtEditorComponent,
+    SharedComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    NgxEditorModule,
     FormsModule,
-    RouterModule
+    ReactiveFormsModule
   ],
   exports:[
+    RichTxtEditorComponent,
     NavbarComponent,
     FooterComponent
   ]

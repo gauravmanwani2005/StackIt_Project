@@ -1,0 +1,42 @@
+
+
+
+<div class="ask-wrapper">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="ask-form">
+      <h2>Ask a Question</h2>
+  
+      <!-- Title -->
+      <label for="title">Title</label>
+      <input
+        id="title"
+        formControlName="title"
+        type="text"
+        placeholder="Enter a clear and concise title "
+      />
+  
+      <app-rich-text-editor [description]="form.get('description')"></app-rich-text-editor>
+
+      
+      <!-- Tags -->
+      <label for="tags">Tags</label>
+      <input
+        id="tags"
+        formControlName="tags"
+        type="text"
+        placeholder="e.g. Angular, Java, Python"
+        (input)="onTagInput($event)"
+        />
+        <div class="tag-badge-container" *ngIf="submittedTags.length > 0">
+          <h3>Tags:</h3>
+          <div class="badge" *ngFor="let tag of submittedTags">
+            {{ tag }}
+          </div>
+        </div>
+  
+      <!-- Submit -->
+      <button type="submit">Submit</button>
+    </form>
+    <!-- Show badges after submit -->
+  
+  
+  </div>

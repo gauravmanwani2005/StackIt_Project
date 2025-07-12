@@ -1,30 +1,25 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Editor } from 'ngx-editor';
+// import { QuestionService } from '../services/question.service'; // adjust this path as needed
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rich-text-editor',
   templateUrl: './rich-txt-editor.component.html',
   styleUrls: ['./rich-txt-editor.component.css']
 })
-export class RichTextEditorComponent implements OnInit, OnDestroy {
+export class RichTxtEditorComponent  {
   editor!: Editor;
-  form!: FormGroup;
-
-  ngOnInit(): void {
-    this.editor = new Editor();
-    this.form = new FormGroup({
-      content: new FormControl('')
-    });
-  }
+  tags =[]
+  @Input()
+  description:any;
 
   ngOnDestroy(): void {
     this.editor.destroy();
   }
 
-  submitContent() {
-    const content = this.form.value.content;
-    console.log('Submitted:', content);
+  ngOnInit(){
+    this.editor = new Editor();
   }
 }
-
